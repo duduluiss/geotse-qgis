@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.vscode/
+.idea/
+*.gpkg
+*.gpkg-shm
+*.gpkg-wal
+tse_to_qgis.zip

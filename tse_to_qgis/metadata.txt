@@ -1,0 +1,27 @@
+[general]
+name=GeoTSE - Espacializador Eleitoral
+qgisMinimumVersion=3.28
+qgisMaximumVersion=4.99
+supportsQt6=True
+description=Importa, agrega (pivota linhas em colunas), converte códigos TSE (5 dígitos) para IBGE (7 dígitos) e espacializa todos os arquivos de dados abertos do TSE (votação, detalhe, eleitorado, locais de votação, candidatos e contas).
+about=Plugin desenvolvido para o QGIS 4 (Qt6) e QGIS 3 por Luís Eduardo Araújo de Souza. Resolve a incompatibilidade entre o código municipal do TSE (5 dígitos, CD_MUNICIPIO / SG_UE) e o geocódigo do IBGE (7 dígitos, CD_MUN), além de transformar tabelas em formato longo (múltiplas linhas por zona, seção, candidato, partido ou perfil) em camadas prontas para mapas temáticos (1 linha por município ou 1 ponto por local de votação). Inclui separação automática de votos de legenda em cargos proporcionais, download automático da malha municipal via API v3 do IBGE, geolocalização automática de locais de votação via CDN do TSE e simbologia graduada por margem de vitória (Data-Defined Color).
+version=1.0.0
+author=Luís Eduardo Araújo de Souza
+email=luisaraujodesouza.geo@gmail.com
+category=Vector
+icon=icon.svg
+tags=tse,eleicoes,ibge,brasil,geoprocessamento,eleitoral,politica,votacao,qgis4,elections,brazil
+homepage=https://github.com/duduluiss/geotse-qgis
+repository=https://github.com/duduluiss/geotse-qgis
+tracker=https://github.com/duduluiss/geotse-qgis/issues
+experimental=False
+deprecated=False
+hasProcessingProvider=yes
+changelog=
+ 1.0.0 - Lançamento inicial:
+  - Suporte universal a todos os arquivos de Dados Abertos do TSE (.csv, .txt e .zip) para Eleições Gerais e Municipais
+  - Dicionário oficial embutido convertendo os 5.571 códigos municipais do TSE (5 dígitos) para IBGE (7 dígitos)
+  - Espacialização por Município (API de Malhas v3 do IBGE ou Join 1:1 com camada existente) e por Local de Votação (Pontos com busca HTTP Range no CDN do TSE)
+  - Separação automática de camadas em grupos por Cargo e Turno
+  - Tratamento metodológico de eleições proporcionais (separação de Votos de Legenda 2 dígitos, agrupamento por Partido/Legenda e categoria residual para outros vencedores)
+  - Simbologia automática em 3 modos: Vencedor Graduado por Margem (Data-Defined Color), Vencedor Bruto (Cor Sólida Partidária) e Graduado por % de Votos
